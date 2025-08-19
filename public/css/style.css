@@ -1,0 +1,896 @@
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    color: #445544;
+}
+
+/* Contenedor principal en 2 columnas */
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* ----------- COLUMNA IZQUIERDA ----------- */
+.left-side {
+    flex: 2;
+    padding: 30px 50px;
+    background-color: #f7f9f8;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+main h1 {
+    margin-top: 120px;
+    /* Ajusta a tu gusto */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/*---------- logo --------*/
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 40px;
+    margin-right: 8px;
+}
+
+.logo span {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: black;
+}
+
+header nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+header nav a:hover {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 500px;
+}
+
+main h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+}
+
+main p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+}
+
+.buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.btn-green {
+    background-color: #7BAE7F;
+    color: white;
+    padding: 12px 18px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.btn-green:hover {
+    background-color: #6a9e6e;
+}
+
+.illustration {
+    max-width: 300px;
+    align-self: flex-end;
+}
+
+/* ----------- COLUMNA DERECHA ----------- */
+.right-side {
+    flex: 1;
+    background-color: white;
+    padding: 50px 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.close-btn {
+    align-self: flex-end;
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.right-side h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+input {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    margin-bottom: 15px;
+}
+
+form a {
+    font-size: 0.85rem;
+    margin-bottom: 20px;
+    text-decoration: none;
+    color: #445544;
+}
+
+form a:hover {
+    text-decoration: underline;
+}
+
+/* ----------- Forumlario de suscripcion ----------- */
+
+/* ------------------------------
+   ESTILOS SOLO PARA FORMULARIO
+------------------------------ */
+/* =================== FORMULARIO DE SUSCRIPCIÓN =================== */
+
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Estilos para la sección de Tipos de Residuos */
+.residues-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.residue-card {
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s;
+    cursor: pointer;
+    box-sizing: border-box;
+
+    /* === CAMBIOS AQUI === */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Alinea los elementos horizontalmente en el centro */
+    text-align: center;
+    /* Centra el texto */
+    /* === FIN DE CAMBIOS === */
+}
+
+.residue-card:hover {
+    transform: translateY(-5px);
+}
+
+.residue-card img {
+    width: 60px;
+    /* Tamaño original de la imagen */
+    height: 60px;
+    margin-bottom: 10px;
+}
+
+.residue-card h4 {
+    margin: 0 0 10px;
+    font-weight: 700;
+    color: #6C9F59;
+}
+
+.residue-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+    line-height: 1.4;
+}
+
+.selection-info {
+    text-align: center;
+    color: #888;
+    margin: 0px 0;
+}
+
+.continue-btn {
+    background-color: #6C9F59;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.continue-btn:hover {
+    background-color: #5a854d;
+}
+
+/* --- Estilos para la barra de navegación superior (header) --- */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 50px;
+    background-color: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+}
+
+.nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 500;
+}
+
+.nav .btn-empresas {
+    background-color: #508D69;
+    color: #fff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+}
+
+.nav .btn-empresas:hover {
+    background-color: #427457;
+}
+
+/* --- Estilos para el formulario visible --- */
+.main-content {
+    display: flex;
+    justify-content: center;
+    /* centro horizontal */
+    align-items: center;
+    /* centro vertical */
+    min-height: calc(100vh - 70px);
+    padding: 20px;
+    width: 100%;
+    /* <<< IMPORTANTE: ocupa todo el ancho */
+
+}
+
+.modal-overlay {
+    /* El formulario ahora se moverá con la barra de desplazamiento */
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: transparent;
+}
+
+.modal-content {
+
+    width: min(92vw, 1000px);
+    /* responsivo y no se sale */
+    margin: 0 auto;
+    /* centra por si acaso */
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, .2);
+    display: flex;
+    flex-direction: column;
+    overflow: visible;
+
+}
+
+
+/* Paleta de colores consistente */
+:root {
+    --color-principal: #84A790;
+    /* Verde de la barra lateral, cabecera del formulario y botones */
+    --color-secundario: #9BB89E;
+    /* Verde más claro para secciones activas y hovers */
+    --color-fondo-pagina: #f0f2f5;
+    /* Gris claro del fondo */
+    --color-fondo-tarjeta: #ffffff;
+    /* Fondo blanco de las tarjetas y contenedores */
+    --color-texto-oscuro: #333;
+    --color-texto-claro: #fff;
+    --color-borde: #e0e0e0;
+}
+
+/* Estilos de la página de programar */
+.programar-container {
+    display: flex;
+    width: 100%;
+    min-height: 100vh;
+    background-color: var(--color-fondo-pagina);
+}
+
+.sidebar-programar {
+    width: 250px;
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar-programar .logo {
+    margin-bottom: 30px;
+}
+
+.user-profile {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.user-profile img {
+    border-radius: 50%;
+    border: 2px solid var(--color-texto-claro);
+    margin-bottom: 10px;
+}
+
+.user-profile h4 {
+    margin: 0;
+    font-size: 18px;
+}
+
+.programar-nav {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.programar-nav a {
+    color: var(--color-texto-claro);
+    text-decoration: none;
+    padding: 15px 20px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.programar-nav a:hover,
+.programar-nav a.active {
+    background-color: var(--color-secundario);
+    font-weight: 700;
+}
+
+.content-programar {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.header-programar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.header-programar h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-texto-oscuro);
+}
+
+.btn-cerrar-sesion {
+    text-decoration: none;
+    color: var(--color-texto-oscuro);
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 20px;
+    background-color: var(--color-borde);
+    transition: background-color 0.3s;
+}
+
+.btn-cerrar-sesion:hover {
+    background-color: #ccc;
+}
+
+.programar-recogida {
+    background-color: var(--color-fondo-tarjeta);
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 30px;
+}
+
+.programar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.residuo-select {
+    padding: 10px 15px;
+    border-radius: 5px;
+    border: 1px solid var(--color-borde);
+    background-color: #f7f7f7;
+    font-size: 16px;
+}
+
+.btn-reprogramar {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 10px 20px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    font-size: 16px;
+}
+
+.calendario-container {
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+}
+
+.calendario-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.2em;
+}
+
+.calendario-header .anterior,
+.calendario-header .siguiente {
+    cursor: pointer;
+    text-transform: uppercase;
+    color: var(--color-principal);
+}
+
+.calendario-header .mes-actual {
+    font-weight: 700;
+    color: var(--color-texto-oscuro);
+}
+
+.dias-semana,
+.dias-mes {
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 5px;
+    text-align: center;
+}
+
+.dias-semana span {
+    font-weight: 700;
+    color: #888;
+}
+
+.dias-mes span {
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.dias-mes span:hover {
+    background-color: var(--color-fondo-pagina);
+}
+
+.dia-vacio {
+    color: #ccc;
+    cursor: default !important;
+}
+
+.btn-programar-recogida {
+    width: 30%;
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 12px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    margin-top: 20px;
+}
+
+.historial h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.historial-grid {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+
+.historial-item {
+    padding: 15px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    border-bottom: 1px solid var(--color-borde);
+}
+
+.historial-header-grid {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    font-weight: 700;
+}
+
+.historial-item:last-child {
+    border-bottom: none;
+}
+
+.historial-item span {
+    display: flex;
+    align-items: center;
+}
+
+.estado-reprogramado {
+    font-weight: 700;
+    color: var(--color-principal);
+}
+
+.modal-header {
+    background-color: #71A88A;
+    color: #fff;
+    padding: 20px;
+    text-align: CENTER;
+    position: relative;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.modal-header h2 {
+    margin: 0;
+}
+
+.modal-body {
+    display: flex;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #B5B5B5;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    transition: color 0.3s ease;
+}
+
+.sidebar a.active {
+    background-color: #E6F3E9;
+    color: #508D69;
+    font-weight: 700;
+}
+
+.sidebar a:not(.active):hover {
+    color: #333;
+}
+
+.form-container {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.form-row {
+    display: flex;
+    gap: 40px;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    flex: 1;
+}
+
+textarea {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+    resize: vertical;
+    min-height: 100px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #e0e0e0;
+    box-sizing: border-box;
+}
+
+.whatsapp-optin {
+    margin-top: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.whatsapp-optin input {
+    margin-right: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Centra los elementos horizontalmente */
+    text-align: center;
+    /* Centra el texto */
+
+}
+
+.continue-btn {
+    background-color: #71A88A;
+    color: #fff;
+    padding: 12px 40px;
+    border: none;
+    border-radius: 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 20px;
+    display: block;
+    width: fit-content;
+    margin-left: auto;
+    margin-right: auto;
+    transition: background-color 0.3s ease;
+}
+
+/* Estilos del modal de reprogramar */
+.modal-reprogramar {
+    display: none;
+    /* Oculta la modal por defecto */
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    overflow: auto;
+}
+
+.modal-content {
+    background-color: var(--color-fondo-tarjeta);
+    margin: 10% auto;
+    padding: 0;
+    width: 90%;
+    max-width: 800px;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    padding: 15px 20px;
+}
+
+.modal-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.close-btn {
+    color: var(--color-texto-claro);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-body {
+    display: flex;
+    padding: 20px;
+}
+
+.modal-sidebar {
+    width: 150px;
+    padding-right: 20px;
+    border-right: 1px solid var(--color-borde);
+}
+
+.modal-nav a {
+    display: block;
+    color: var(--color-texto-oscuro);
+    text-decoration: none;
+    padding: 10px 0;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.modal-nav a:hover,
+.modal-nav a.active {
+    background-color: var(--color-secundario);
+    font-weight: 700;
+    color: var(--color-principal);
+}
+
+.modal-main {
+    flex-grow: 1;
+    padding-left: 20px;
+}
+
+.modal-main p {
+    margin-bottom: 10px;
+}
+
+.modal-main a {
+    color: var(--color-principal);
+    text-decoration: underline;
+}
+
+.modal-calendar-container {
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.modal-footer {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px;
+    border-top: 1px solid var(--color-borde);
+    background-color: #f7f7f7;
+}
+
+.btn-cancelar {
+    background-color: #ccc;
+    color: var(--color-texto-oscuro);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 500;
+    margin-right: 10px;
+}
+
+.btn-confirmar {
+    background-color: var(--color-principal);
+    color: var(--color-texto-claro);
+    border: none;
+    padding: 12px 25px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-weight: 700;
+}
+
+/* --- Calendario: separa 'siguiente' del mes y alínealo a la derecha --- */
+.cal-head {
+    display: grid;
+    /* ya lo tienes, lo reforzamos */
+    grid-template-columns: 1fr auto 1fr;
+    gap: 12px;
+    /* espacio entre columnas */
+    align-items: center;
+}
+
+.cal-head h3 {
+    margin: 0;
+    text-align: center;
+    /* el mes centrado */
+    letter-spacing: .8px;
+}
+
+.cal-head .prev {
+    justify-self: start;
+}
+
+.cal-head .next {
+    justify-self: end;
+    /* lo manda al extremo derecho */
+    padding-left: 8px;
+    /* colchón para que no pegue al mes */
+}
+
+/* --- Selector superior: reemplaza la 'V' por una flecha y evita superposición --- */
+.select-wrap {
+    position: relative;
+    padding-right: 42px;
+    /* espacio para la flecha */
+}
+
+.select-wrap select {
+    appearance: none;
+    /* ocultar flecha nativa */
+    padding-right: 24px;
+    width: 100%;
+    background: transparent;
+    border: 0;
+    outline: none;
+}
+
+.select-wrap::after {
+    content: "▾";
+    /* flecha, no la letra 'V' */
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    line-height: 1;
+    font-size: 16px;
+    color: #555;
+    pointer-events: none;
+    /* que no tape el click del select */
+}
+
+
+.continue-btn:hover {
+    background-color: #508D69;
+}
+
+/* Estilos para las secciones del formulario (cambio de vista) */
+.form-section {
+    display: none;
+}
+
+.form-section.active-section {
+    display: block;
+}
+
+.form-section {
+    display: none;
+    /* Oculta todas las secciones por defecto */
+}
+
+.form-section.active-section {
+    display: block;
+    /* Muestra solo la sección activa */
+}

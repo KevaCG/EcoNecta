@@ -1,0 +1,218 @@
+:root {
+    --green: #6C9F59;
+    --green-2: #508D69;
+    --text: #1c2522;
+    --muted: #6b737d;
+    --pill: #eef1ef;
+    --border: #e6eaed;
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Inter, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    color: var(--text);
+    background: #fff;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 1fr 420px;
+    min-height: 100vh;
+}
+
+/* ===== Columna izquierda ===== */
+.left-side {
+    padding: 26px 28px 20px 40px;
+    position: relative;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.logo img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain
+}
+
+.logo span {
+    font-weight: 800;
+    font-size: 20px
+}
+
+nav a {
+    color: #334;
+    text-decoration: none;
+    margin-left: 26px;
+    font-weight: 600
+}
+
+nav a:hover {
+    opacity: .85
+}
+
+main {
+    margin-top: 48px;
+    max-width: 560px
+}
+
+main h1 {
+    font-size: 48px;
+    line-height: 1.1;
+    margin: 0 0 12px
+}
+
+main p {
+    color: var(--muted);
+    margin: 0 0 16px
+}
+
+.buttons {
+    display: flex;
+    gap: 12px
+}
+
+.btn-green {
+    background: var(--green);
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-weight: 700;
+    cursor: pointer
+}
+
+.btn-green:hover {
+    filter: brightness(.97)
+}
+
+.illustration {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 360px;
+    max-width: 36vw;
+    opacity: .9
+}
+
+/* ===== Columna derecha ===== */
+.right-side {
+    border-left: 1px solid var(--border);
+    padding: 18px 24px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.close-btn {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+    background: transparent;
+    border: 0;
+    font-size: 22px;
+    cursor: pointer;
+    color: #2b2f31
+}
+
+.panel {
+    width: 100%;
+    max-width: 360px;
+    margin-top: 22px
+}
+
+.panel h2 {
+    margin: 18px 0 16px;
+    text-align: center
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px
+}
+
+label {
+    font-size: 14px;
+    font-weight: 600
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    background: var(--pill);
+    border: 1px solid #e3e6e6;
+    border-radius: 999px;
+    padding: 12px 16px;
+    outline: none;
+}
+
+.right-side a {
+    font-size: 14px;
+    color: #506;
+    text-decoration: none;
+    margin: 2px 0 6px
+}
+
+.right-side a:hover {
+    text-decoration: underline
+}
+
+/* ===== Panel de Recuperación ===== */
+.recovery-title {
+    text-align: center;
+    margin: 8px 0 16px;
+}
+
+.recovery-title .big {
+    font-size: 20px;
+    font-weight: 700
+}
+
+.recovery-title .small {
+    font-size: 16px;
+    font-weight: 700;
+    margin-top: 2px
+}
+
+.hint {
+    font-size: 11px;
+    color: #7b828a;
+    margin-top: 4px
+}
+
+.btn-send {
+    display: block;
+    margin: 12px auto 0;
+    background: var(--green);
+    color: #fff;
+    border: 0;
+    border-radius: 999px;
+    padding: 10px 24px;
+    font-weight: 800;
+    cursor: pointer
+}
+
+/* Mostrar/ocultar vistas */
+.hidden {
+    display: none
+}

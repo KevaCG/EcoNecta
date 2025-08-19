@@ -1,0 +1,299 @@
+:root {
+    --green: #6C9F59;
+    --green-dark: #508D69;
+    --border: #e2e5e9;
+    --bg: #f0f2f5;
+    --text: #2b2b2b;
+    --muted: #8a8f98;
+    --shadow: 0 8px 28px rgba(0, 0, 0, .18);
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    margin: 0;
+    font-family: Roboto, system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text)
+}
+
+/* ===== Modal overlay centrado y responsivo ===== */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, .35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(12px, 2.5vw, 28px);
+    z-index: 1000;
+}
+
+.dialog {
+    width: min(96vw, 980px);
+    background: #fff;
+    border-radius: 14px;
+    box-shadow: var(--shadow);
+    overflow: hidden;
+}
+
+/* ===== Header ===== */
+.dialog__header {
+    background: var(--green-dark);
+    color: #fff;
+    padding: 16px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+.dialog__title {
+    font-size: clamp(18px, 2.4vw, 22px);
+    font-weight: 800;
+    letter-spacing: .5px
+}
+
+.dialog__close {
+    position: absolute;
+    right: 12px;
+    top: 10px;
+    background: transparent;
+    border: 0;
+    color: #fff;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+}
+
+.dialog__close:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px
+}
+
+/* ===== Layout: menú izquierda + contenido ===== */
+.dialog__body {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 0;
+    min-height: 420px;
+}
+
+@media (max-width: 720px) {
+    .dialog__body {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* ===== Menú lateral ===== */
+.sidemenu {
+    border-right: 1px solid var(--border);
+    padding: 18px 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    background: #fff;
+}
+
+@media (max-width:720px) {
+    .sidemenu {
+        flex-direction: row;
+        gap: 6px;
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+        overflow: auto;
+    }
+}
+
+.sidemenu__btn {
+    appearance: none;
+    border: 0;
+    background: transparent;
+    padding: 12px 14px;
+    border-radius: 10px;
+    text-align: left;
+    font-weight: 700;
+    color: var(--muted);
+    cursor: pointer;
+}
+
+.sidemenu__btn[aria-selected="true"] {
+    background: #e9f2ea;
+    color: #2f6b3c;
+    box-shadow: inset 0 0 0 2px #d4e6d8;
+}
+
+.sidemenu__btn:focus-visible {
+    outline: 2px solid var(--green-dark);
+    outline-offset: 2px
+}
+
+/* ===== Contenido ===== */
+.panel {
+    padding: 22px clamp(14px, 3vw, 28px);
+    display: none;
+}
+
+.panel.is-active {
+    display: block;
+}
+
+/* ===== Grid de campos ===== */
+.form-grid {
+    display: grid;
+    gap: 18px 22px;
+    grid-template-columns: repeat(2, minmax(220px, 1fr));
+}
+
+@media (max-width:720px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.field label {
+    display: block;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"],
+.field input[type="tel"],
+.field input[type="number"],
+.field select,
+.field textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    font: inherit;
+    box-shadow: 0 3px 0 0 #d9d9d9 inset;
+}
+
+/* Estilo específico del checkbox */
+.field input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    margin: 0;
+    box-shadow: none;
+    /* quita la línea rara */
+    border: 1px solid #cdd5df;
+    border-radius: 4px;
+    accent-color: #6C9F59;
+    /* color del check */
+}
+
+/* Para alinear checkbox + texto */
+.field--check {
+    grid-column: 1/-1;
+}
+
+.check {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    user-select: none;
+    padding-top: 6px;
+}
+
+.check span {
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.muted {
+    color: var(--muted);
+    font-size: 13px
+}
+
+/* ===== Cards de residuos ===== */
+.residuos {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(160px, 1fr));
+    justify-items: center;
+}
+
+@media (max-width:900px) {
+    .residuos {
+        grid-template-columns: 1fr;
+    }
+}
+
+.card {
+    width: 100%;
+    max-width: 240px;
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    background: #fff;
+    padding: 14px;
+    text-align: center;
+    box-shadow: 0 3px 0 0 #d9d9d9 inset;
+    transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+    cursor: pointer;
+}
+
+.card h4 {
+    margin: 8px 0 10px;
+    font-weight: 800
+}
+
+.card p {
+    margin: 0;
+    font-size: 13px;
+    color: #5f646c;
+    line-height: 1.3
+}
+
+.card img {
+    width: 64px;
+    height: 64px;
+    object-fit: contain
+}
+
+.card.is-selected {
+    border-color: #b8d6c0;
+    box-shadow: 0 0 0 3px #e3f2e7, 0 3px 0 0 #d9d9d9 inset;
+    transform: translateY(-2px);
+}
+
+/* ===== Footer ===== */
+.dialog__footer {
+    padding: 18px;
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid var(--border);
+}
+
+.btn {
+    appearance: none;
+    border: 0;
+    padding: 12px 22px;
+    border-radius: 26px;
+    font-weight: 800;
+    cursor: pointer;
+}
+
+.btn--primary {
+    background: var(--green);
+    color: #fff
+}
+
+.btn--primary:hover {
+    background: #5a854d
+}
+
+.btn--ghost {
+    background: transparent;
+    color: var(--green-dark)
+}
