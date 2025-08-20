@@ -1,0 +1,248 @@
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f0f4f7;
+    margin: 0;
+    padding: 0;
+}
+
+/* Contenedor principal del dashboard */
+.dashboard-container {
+    display: flex;
+    background-color: #f0f4f7;
+    min-height: 100vh;
+}
+
+/* Sidebar (Barra lateral) */
+.sidebar {
+    width: 250px;
+    background-color: #84A98C; /* Verde claro */
+    color: #fff;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar .logo img {
+    height: 40px;
+}
+
+.user-info {
+    text-align: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.user-info img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+}
+
+.user-info h4 {
+    margin: 10px 0 0;
+}
+
+.nav-menu {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.nav-menu a:hover {
+    background-color: #8cc48c;
+}
+
+/* Contenido principal */
+.main-content {
+    flex-grow: 1;
+    padding: 40px;
+}
+
+.dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 30px;
+}
+
+.dashboard-title {
+    font-size: 2rem;
+    font-weight: 700;
+}
+
+.dashboard-header a {
+    text-decoration: none;
+    color: #84A98C;
+    font-weight: 600;
+}
+
+/* Estilos de las secciones (recuadros blancos) */
+.section {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Estilos para el formulario de programación */
+.form-group {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group select {
+    padding: 8px 12px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    min-width: 200px;
+}
+
+.form-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.3s;
+}
+
+.btn-primary {
+    background-color: #84A98C;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background-color: #84A98C;
+}
+
+.btn-secondary {
+    background-color: #84A98C;
+    color: #fff;
+}
+
+.btn-secondary:hover {
+    background-color: #84A98C;
+}
+
+/* Estilos para el calendario */
+#calendar {
+    max-width: 700px;
+    margin: 20px auto;
+}
+
+/* Estilos para la tabla de historial */
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.history-table th, .history-table td {
+    padding: 12px;
+    border: 1px solid #e0e0e0;
+}
+
+.history-table thead th {
+    background-color: #f5f5f5;
+    font-weight: 600;
+}
+
+.history-table tbody td {
+    background-color: #fff;
+}
+
+.status-rescheduled {
+    background-color: #b3e0f9;
+    color: #000;
+    border-radius: 5px;
+    padding: 5px 10px;
+    display: inline-block;
+}
+
+
+/* Estilos del modal */
+.modal {
+    display: none; /* Oculto por defecto */
+    position: fixed; /* Mantiene el modal en su lugar */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto; /* Habilita el scroll si el contenido es muy largo */
+    background-color: rgba(0,0,0,0.4); /* Fondo semi-transparente */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% de arriba y centrado horizontalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Ancho del modal */
+    max-width: 600px; /* Ancho máximo para pantallas grandes */
+    border-radius: 10px;
+    position: relative;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.modal-header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-btn:hover,
+.close-btn:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}

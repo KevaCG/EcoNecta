@@ -70,6 +70,10 @@
                                 <label for="phone_whatsapp">Número de contacto</label>
                                 <input id="phone_whatsapp" type="tel" name="phone_whatsapp" value="{{ old('phone_whatsapp') }}" placeholder="Ingrese su celular" autocomplete="tel">
                             </div>
+                            <div class="field">
+    <label for="document_id">Cédula</label>
+    <input id="document_id" type="text" name="document_id" value="{{ old('document_id') }}" placeholder="Ingrese su documento de identidad">
+</div>
                             <div class="field field--password">
     <label for="password">Contraseña</label>
     <input id="password" type="password" name="password" placeholder="Ingrese su contraseña" autocomplete="new-password" required>
@@ -117,29 +121,24 @@
                     </section>
 
                     {{-- Panel 3 --}}
-                    <section class="panel" id="panel-residuos" role="tabpanel" aria-labelledby="tab-residuos">
-                        <div class="residuos" id="residuos">
-                            <article class="card" data-waste-id="organicos" tabindex="0">
-                                <img src="{{ asset('img/residuos/organicos.png') }}" alt="Orgánicos">
-                                <h4>ORGÁNICOS</h4>
-                                <p>Material biodegradable de origen vegetal: restos de comida, cáscaras, hojas, residuos de jardín.</p>
-                                <input type="checkbox" name="waste_types[]" value="organicos" hidden>
-                            </article>
-                            <article class="card" data-waste-id="inorganicos" tabindex="0">
-                                <img src="{{ asset('img/residuos/inorganicos.png') }}" alt="Inorgánicos">
-                                <h4>INORGÁNICOS</h4>
-                                <p>Desechos no biodegradables que pueden ser reciclados o reutilizados: plásticos, cartón, vidrio, metales, telas.</p>
-                                <input type="checkbox" name="waste_types[]" value="inorganicos" hidden>
-                            </article>
-                            <article class="card" data-waste-id="peligrosos" tabindex="0">
-                                <img src="{{ asset('img/residuos/peligrosos.png') }}" alt="Peligrosos">
-                                <h4>PELIGROSOS</h4>
-                                <p>Riesgo para la salud o el medio ambiente: pilas, medicamentos vencidos, aceites.</p>
-                                <input type="checkbox" name="waste_types[]" value="peligrosos" hidden>
-                            </article>
-                        </div>
-                        <p class="muted" style="text-align:center;margin-top:10px">Puedes escoger más de uno</p>
-                    </section>
+                    <div class="form-section">
+    <h3>Paso 3: Tipos de Residuos</h3>
+    <p>Seleccione los tipos de residuos que desea reciclar:</p>
+    <div class="field-group">
+        <div class="checkbox-field">
+            <input type="checkbox" id="residuos_organicos" name="waste_types[]" value="organicos">
+            <label for="residuos_organicos">Orgánicos</label>
+        </div>
+        <div class="checkbox-field">
+            <input type="checkbox" id="residuos_plasticos" name="waste_types[]" value="plasticos">
+            <label for="residuos_plasticos">Plásticos</label>
+        </div>
+        <div class="checkbox-field">
+            <input type="checkbox" id="residuos_papel" name="waste_types[]" value="papel">
+            <label for="residuos_papel">Papel y Cartón</label>
+        </div>
+    </div>
+</div>
                 </form>
             </div>
         </div>

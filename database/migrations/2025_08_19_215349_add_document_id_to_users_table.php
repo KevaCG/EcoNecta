@@ -9,17 +9,14 @@ return new class extends Migration
     public function up(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->string('neighborhood')->after('address')->nullable();
-            $table->string('postal_code', 20)->after('neighborhood')->nullable();
-            $table->string('locality')->nullable()->constrained('localities')->onDelete('set null');
+            $table->string('document_id')->after('email')->nullable()->unique();
         });
     }
 
     public function down(): void
     {
         Schema::table('users', function (Blueprint $table) {
-            $table->dropForeign(['locality_id']);
-            $table->dropColumn(['neighborhood', 'postal_code', 'locality_id']);
+            $table->dropColumn('document_id');
         });
     }
 };

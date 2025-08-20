@@ -2,59 +2,66 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\ProfileUpdateRequest;
-use Illuminate\Http\RedirectResponse;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\View\View;
+use Illuminate\Validation\Rule;
+use App\Models\WasteType; // Necesitamos este modelo para sincronizar
 
 class ProfileController extends Controller
 {
     /**
-     * Display the user's profile form.
+     * Muestra el formulario de edición del perfil del usuario.
      */
-    public function edit(Request $request): View
+    public function edit()
     {
         return view('profile.edit', [
-            'user' => $request->user(),
+            'user' => Auth::user()->load('wasteTypes'),
+            'allWasteTypes' => WasteType::all(),
         ]);
     }
 
-    /**
-     * Update the user's profile information.
-     */
-    public function update(ProfileUpdateRequest $request): RedirectResponse
-    {
-        $request->user()->fill($request->validated());
-
-        if ($request->user()->isDirty('email')) {
-            $request->user()->email_verified_at = null;
-        }
-
-        $request->user()->save();
-
-        return Redirect::route('profile.edit')->with('status', 'profile-updated');
-    }
+    
 
     /**
-     * Delete the user's account.
+     * Actualiza la información del perfil del usuario.
      */
-    public function destroy(Request $request): RedirectResponse
+    public function update(Request $request)
     {
-        $request->validateWithBag('userDeletion', [
-            'password' => ['required', 'current_password'],
-        ]);
-
         $user = $request->user();
 
-        Auth::logout();
+        // Validamos la información personal y la de la dirección
+        $validatedData = $request->validate([
+            'name' => ['required', 'string', 'max:255'],
+            'email' => ['required', 'string', 'lowercase', 'email', 'max:255', Rule::unique(User::class)->ignore($user->id)],
+            'phone_whatsapp' => ['nullable', 'string', 'max:20', Rule::unique(User::class)->ignore($user->id)],
+            'address' => ['required', 'string', 'max:255'],
+            'neighborhood' => ['required', 'string', 'max:255'],
+            'postal_code' => ['nullable', 'string', 'max:20'],
+            'locality' => ['required', 'string', 'max:255'],
+            'receive_whatsapp' => ['nullable', 'boolean'],
+            'waste_types' => ['nullable', 'array'],
+        ]);
 
-        $user->delete();
+        $user->fill($validatedData);
 
-        $request->session()->invalidate();
-        $request->session()->regenerateToken();
+        if ($user->isDirty('email')) {
+            $user->email_verified_at = null;
+        }
 
-        return Redirect::to('/');
+        // Guardamos los tipos de residuos
+        if ($request->has('waste_types')) {
+            $wasteTypeIds = WasteType::whereIn('name', $request->waste_types)->pluck('id');
+            $user->wasteTypes()->sync($wasteTypeIds);
+        } else {
+            // Si no se selecciona ninguno, desvinculamos todos
+            $user->wasteTypes()->sync([]);
+        }
+
+
+        // Guardamos los cambios en el modelo de usuario
+        $user->save();
+
+        return redirect()->route('profile.edit')->with('status', 'profile-updated');
     }
 }
